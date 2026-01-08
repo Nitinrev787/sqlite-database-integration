@@ -36,3 +36,18 @@ Feedback is encouraged and much appreciated, especially since this plugin is a f
 = How can I contribute to the plugin? =
 
 Contributions are always welcome! Learn more about how to get involved in the [Core Performance Team Handbook](https://make.wordpress.org/performance/handbook/get-involved/).
+= Are there any file permission requirements when using SQLite? =
+
+Yes. The directory where the SQLite database file is stored must be writable
+by the web server. If proper write permissions are not set, WordPress may fail
+to create or access the database, leading to installation or runtime issues.
+
+= Does this plugin change how WordPress queries are executed? =
+
+The plugin replaces the default MySQL database layer with an SQLite-based
+implementation. Core WordPress queries continue to use the wpdb API,
+but are translated internally to be compatible with SQLite syntax
+and behavior.
+
+
+
